@@ -108,7 +108,7 @@ void main(List<String> arguments) async {
   // those are in order of reliability -
   // if one fails, only then later ones will be used
   final dateExtractors = <DateTimeExtractor>[
-    jsonExtractor,
+    // jsonExtractor,
     exifExtractor,
     if (args['guess-from-name']) guessExtractor,
   ];
