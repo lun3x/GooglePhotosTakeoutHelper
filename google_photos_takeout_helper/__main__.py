@@ -690,18 +690,18 @@ def main():
         _input_files_count += len(list(PHOTOS_DIR.rglob(f'**/*{ext}')))
     logger.info(f'Input files: {_input_files_count}')
 
-    logger.info('=====================')
-    logger.info('Fixing files metadata and creation dates...')
-    # tqdm progress bar stuff
-    _metadata_bar = _tqdm(total=_input_files_count, unit='files')
-
-    for_all_files_recursive(
-        dir=PHOTOS_DIR,
-        file_function=lambda f: _walk_with_tqdm(fix_metadata(f), _metadata_bar),
-        # TODO (probably never, but should): Change this maybe to path.rglob
-        filter_fun=lambda f: (is_photo(f) or is_video(f))
-    )
-    _metadata_bar.close()
+    # logger.info('=====================')
+    # logger.info('Fixing files metadata and creation dates...')
+    # # tqdm progress bar stuff
+    # _metadata_bar = _tqdm(total=_input_files_count, unit='files')
+    #
+    # for_all_files_recursive(
+    #     dir=PHOTOS_DIR,
+    #     file_function=lambda f: _walk_with_tqdm(fix_metadata(f), _metadata_bar),
+    #     # TODO (probably never, but should): Change this maybe to path.rglob
+    #     filter_fun=lambda f: (is_photo(f) or is_video(f))
+    # )
+    # _metadata_bar.close()
     logger.info('=====================')
 
     logger.info('=====================')
